@@ -73,10 +73,10 @@ public class TootorsFragment extends Fragment {
 
         private final String LOG_TAG = FetchTootorTask.class.getSimpleName();
 
-        private String[] getTootorsDataFromJson(String individualJsonStr, int numTutors) {
+        private String[] getTootorsDataFromJson(String individualJsonStr, int numTutors) throws JSONException {
 
             final String T_RESULTS = "items";
-            final String IS_TUTOR = "is_tootor";
+//            final String IS_TUTOR = "is_tootor";
             final String T_NAME = "name";
             final String T_PHONE = "phone";
             final String T_EMAIL = "email";
@@ -84,45 +84,38 @@ public class TootorsFragment extends Fragment {
             final String T_FOCUS = "focus";
 
             // Turn a Json string into a Json object
-            JSONObject individualJson = null;
+            JSONObject individualJson = new JSONObject(individualJsonStr);
 
             String[] resultStrs = new String[numTutors];
 
-            try {
+            // Look for the results array
+            JSONArray individualArray = individualJson.getJSONArray(T_RESULTS);
 
-                individualJson = new JSONObject(individualJsonStr);
+            for (int i = 0; i < individualArray.length(); i++) {
 
-                // Look for the results array
-                JSONArray individualArray = individualJson.getJSONArray(T_RESULTS);
+//                String is_tutor;
+                String name;
+                String phone;
+                String email;
+                String city;
+                String focus;
 
-                for (int i = 0; i < individualArray.length(); i++) {
+                // Get the Json object representing a tutor
+                JSONObject tootor = individualArray.getJSONObject(i);
 
-                    String is_tutor;
-                    String name;
-                    String phone;
-                    String email;
-                    String city;
-                    String focus;
+//                    is_tutor = tootor.getString(IS_TUTOR);
 
-                    // Get the Json object representing a tutor
-                    JSONObject tootor = individualArray.getJSONObject(i);
+//                    if (is_tutor.equalsIgnoreCase("t")) {
 
-                    is_tutor = tootor.getString(IS_TUTOR);
+                name = tootor.getString(T_NAME);
+                phone = tootor.getString(T_PHONE);
+                email = tootor.getString(T_EMAIL);
+                city = tootor.getString(T_City);
+                focus = tootor.getString(T_FOCUS);
 
-                    if (is_tutor.equalsIgnoreCase("t")) {
 
-                        name = tootor.getString(T_NAME);
-                        phone = tootor.getString(T_PHONE);
-                        email = tootor.getString(T_EMAIL);
-                        city = tootor.getString(T_City);
-                        focus = tootor.getString(T_FOCUS);
-
-                        resultStrs[i] = "Name: " + name + " - Phone: " + phone + " - Email: " +
-                                email + " - City: " + city + " - Focus: " + focus;
-                    }
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
+                resultStrs[i] = "Name: " + name + " - Phone: " + phone + " - Email: " +
+                        email + " - City: " + city + " - Focus: " + focus;
             }
 
             return resultStrs;
@@ -141,7 +134,7 @@ public class TootorsFragment extends Fragment {
             try {
 
                 // Construct the URL for the server
-                String baseUrl = "http://162.243.155.134/api/tootor";
+                String baseUrl = "http://162.243.155.134/api/tootor?is_tootor=true";
                 URL url = new URL(baseUrl);
 
                 Log.v(LOG_TAG, "Build URL: " + url.toString());
@@ -205,7 +198,17 @@ public class TootorsFragment extends Fragment {
                 }
             }
 
-            return getTootorsDataFromJson(individualJsonStr, numTutors);
+            try {
+
+                return getTootorsDataFromJson(individualJsonStr, numTutors);
+
+            } catch (JSONException e) {
+
+                Log.e(LOG_TAG, e.getMessage(), e);
+                e.printStackTrace();
+            }
+
+            return null;
         }
 
         @Override
