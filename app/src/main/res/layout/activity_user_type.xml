@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tootors.tootors.LoginActivity"
+    tools:context="com.tootors.tootors.UserTypeActivity
+    "
     android:weightSum="1">
 
 
@@ -30,70 +31,28 @@
         android:layout_gravity="center_horizontal"
         android:src="@drawable/mainicon"
         android:layout_below="@+id/app_name"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/username"
-        android:id="@+id/username"
-        android:layout_below="@+id/imageIcon"
-        android:textSize="@dimen/main_font_size"
-
-        android:textStyle="bold"
-        android:textColor="#0097d8" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/username_input"
-        android:layout_below="@+id/username"
-
-       />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/password"
-        android:id="@+id/password"
-        android:layout_below="@+id/username_input"
-        android:textStyle="bold"
-        android:textColor="#0097d8"
-        android:textSize="@dimen/main_font_size"
-        />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/password_input"
-        android:layout_below="@+id/password"
-        android:layout_marginBottom="10dp"
-
-        />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:id="@+id/login_button"
-        android:layout_below="@+id/password_input"
+        android:text="@string/student_button"
+        android:id="@+id/student_button"
+        android:layout_below="@+id/imageIcon"
         android:onClick="onButtonClick"
         android:layout_gravity="center_horizontal"
         android:textColor="#FFFFFF"
         android:background="#2b2b2b"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/signup"
-        android:id="@+id/signup_button"
-        android:layout_below="@+id/login_button"
+        android:text="@string/tutor_button"
+        android:id="@+id/tutor_button"
+        android:layout_below="@+id/student_button"
         android:onClick="onButtonClick"
         android:layout_gravity="center_horizontal"
         android:textColor="#FFFFFF"

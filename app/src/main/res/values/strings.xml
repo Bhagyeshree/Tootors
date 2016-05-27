@@ -11,8 +11,9 @@
     <string name="login">Login</string>
     <string name="signup">Sign Up</string>
 
-
-
+    <string name="student_button">I Need a Tutor</string>
+    <string name="tutor_button">I am a Tutor</string>
 
     <string name="emptyString" />
+    <string name="title_activity_user_type">UserTypeActivity</string>
 </resources>
