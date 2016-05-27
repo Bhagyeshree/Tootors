@@ -25,7 +25,7 @@ public class UserTypeActivity extends AppCompatActivity {
 
         if(v.getId() == R.id.tutor_button)
         {
-            Intent i = new Intent(this, SignUpActivity.class);
+            Intent i = new Intent(this, SignUpTutorActivity.class);
             startActivity(i);
         }
 

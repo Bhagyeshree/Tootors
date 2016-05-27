@@ -26,6 +26,7 @@ public class SignUpTutorActivity extends AppCompatActivity {
 
     public  void onSignUpClick(View v)
     {
+        /**
         if(v.getId()==R.id.Bsignupbutton)
         {
             name = (EditText)findViewById(R.id.TFname);
@@ -66,5 +67,7 @@ public class SignUpTutorActivity extends AppCompatActivity {
 
 
         }
+         **/
     }
+
 }

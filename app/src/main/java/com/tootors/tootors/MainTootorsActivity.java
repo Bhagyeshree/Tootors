@@ -49,7 +49,7 @@ public class MainTootorsActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_signup) {
-            startActivity(new Intent(this, SignUpActivity.class));
+            startActivity(new Intent(this, SignUpTutorActivity.class));
             return true;
         }
 
