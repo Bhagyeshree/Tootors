@@ -1,5 +1,6 @@
 package com.tootors.tootors;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -46,6 +47,17 @@ public class MainTootorsActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+
+        if (id == R.id.action_signup) {
+            startActivity(new Intent(this, SignUpActivity.class));
+            return true;
+        }
+
+        if (id == R.id.action_login) {
+            startActivity(new Intent(this, LoginActivity.class));
+            return true;
+        }
+        //It will return item
 
         return super.onOptionsItemSelected(item);
     }
