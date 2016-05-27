@@ -16,9 +16,7 @@
     <string name="streetaddress">Street Address</string>
     <string name="city">City</string>
     <string name="state">State</string>
-    <string name="zip">ZIP</string>
-
-
+    <string name="zip">ZIP Code</string>
 
 
     <string name="login">Login</string>

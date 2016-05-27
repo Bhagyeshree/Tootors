@@ -21,7 +21,8 @@
         <activity android:name=".SignUpTutorActivity" />
         <activity android:name=".DisplayActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UserTypeActivity"></activity>
+        <activity android:name=".UserTypeActivity" />
+        <activity android:name=".SignUpStudentActivity"></activity>
     </application>
 
 </manifest>
