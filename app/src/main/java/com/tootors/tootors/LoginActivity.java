@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
             Intent i = new Intent(this, Display.class);
 
+            //***
             i.putExtra("Username", str);
 
             startActivity(i);
