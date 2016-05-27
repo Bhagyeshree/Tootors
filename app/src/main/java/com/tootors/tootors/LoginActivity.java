@@ -22,22 +22,21 @@ public class LoginActivity extends AppCompatActivity {
     public void onButtonClick(View v){
 
 
-        if(v.getId() == R.id.Blogin)
+        if(v.getId() == R.id.login_button)
         {
-            username = (EditText)findViewById(R.id.TFusername);
+            username = (EditText)findViewById(R.id.username_input);
 
             String str = username.getText().toString();
 
 
             Intent i = new Intent(this, Display.class);
 
-            //***
             i.putExtra("Username", str);
 
             startActivity(i);
         }
 
-        if(v.getId() == R.id.Bsignup)
+        if(v.getId() == R.id.signup_button)
         {
             Intent i = new Intent(this, SignUpActivity.class);
 
