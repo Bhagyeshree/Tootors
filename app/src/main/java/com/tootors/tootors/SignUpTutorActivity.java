@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpTutorActivity extends AppCompatActivity {
 
     private EditText name;
     private EditText email;
@@ -19,7 +19,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_sign_up_tutor);
     }
 
 
