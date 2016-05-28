@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tootors.tootors">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,6 +25,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".register.SignUpTutorActivity" />
+        <activity android:name=".register.LoginActivity" />
+        <activity android:name=".register.UserTypeActivity" />
+        <activity android:name=".register.SignUpStudentActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="##########################################API KEY#####################################" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".map.MapActivity"></activity>
     </application>
 
 </manifest>
