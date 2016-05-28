@@ -1,4 +1,4 @@
-package com.tootors.tootors;
+package com.tootors.tootors.database;
 
 /**
  * Created by bhagyeshree on 5/19/16.

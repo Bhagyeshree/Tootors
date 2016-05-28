@@ -1,10 +1,13 @@
-package com.tootors.tootors;
+package com.tootors.tootors.register;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.View;
+
+import com.tootors.tootors.R;
+import com.tootors.tootors.register.SignUpStudentActivity;
+import com.tootors.tootors.register.SignUpTutorActivity;
 
 public class UserTypeActivity extends AppCompatActivity {
 

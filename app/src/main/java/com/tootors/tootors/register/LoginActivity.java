@@ -1,4 +1,4 @@
-package com.tootors.tootors;
+package com.tootors.tootors.register;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
+
+import com.tootors.tootors.R;
 
 public class LoginActivity extends AppCompatActivity {
 

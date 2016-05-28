@@ -1,7 +1,9 @@
-package com.tootors.tootors;
+package com.tootors.tootors.register;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.tootors.tootors.R;
 
 public class SignUpStudentActivity extends AppCompatActivity {
 

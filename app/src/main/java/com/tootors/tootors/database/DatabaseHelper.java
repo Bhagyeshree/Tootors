@@ -1,10 +1,12 @@
-package com.tootors.tootors;
+package com.tootors.tootors.database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.tootors.tootors.database.Contact;
 
 /**
  * Created by bhagyeshree on 5/19/16.

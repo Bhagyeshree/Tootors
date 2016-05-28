@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.tootors.tootors.map.MapActivity;
+import com.tootors.tootors.register.LoginActivity;
+import com.tootors.tootors.register.SignUpTutorActivity;
+
 public class MainTootorsActivity extends AppCompatActivity {
 
     @Override
@@ -55,6 +59,11 @@ public class MainTootorsActivity extends AppCompatActivity {
 
         if (id == R.id.action_login) {
             startActivity(new Intent(this, LoginActivity.class));
+            return true;
+        }
+
+        if (id == R.id.action_open_map) {
+            startActivity(new Intent(this, MapActivity.class));
             return true;
         }
         //It will return item
