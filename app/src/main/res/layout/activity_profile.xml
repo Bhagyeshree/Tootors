@@ -9,73 +9,129 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_is_tootor" />
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#0097d8"
+            android:textStyle="bold" />
 
-        <WebView
+        <TextView
+            android:id="@+id/profile_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/at_username" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/profile_tootor_info">
+
+            <TextView
+                android:id="@+id/profile_is_tootor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#0097d8"
+                android:textStyle="bold"
+                android:text="@string/is_tootor" />
+
+            <TextView
+                android:id="@+id/profile_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/hourly_rate" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/profile_picture"
             android:layout_width="fill_parent"
-            android:layout_height="300dp"
-            android:id="@+id/profile_picture" />
+            android:layout_height="200dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_name" />
+            android:text="@string/contact"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#0097d8"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:id="@+id/profile_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mail" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:id="@+id/profile_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:id="@+id/profile_video"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:linksClickable="true"
+                android:text="Video" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_username" />
+            android:text="@string/focus"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#0097d8"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/profile_focus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_email" />
+            android:text="@string/description"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#0097d8"
+            android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/profile_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_phone" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_price" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_focus" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/profile_description" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:linksClickable="true"
-            android:autoLink="web"
-            android:text=""
-            android:id="@+id/profile_video" />
+            android:text="" />
 
     </LinearLayout>
 </RelativeLayout>

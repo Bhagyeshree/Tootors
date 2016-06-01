@@ -29,4 +29,11 @@
 
     <string name="emptyString" />
     <string name="title_activity_user_type">UserTypeActivity</string>
+    <string name="contact">Contact</string>
+    <string name="description">Description</string>
+    <string name="focus">Focus</string>
+    <string name="at_username">\@%s</string>
+    <string name="text">Text</string>
+    <string name="is_tootor">I am a Tootor!</string>
+    <string name="hourly_rate">$%.2f / hr</string>
 </resources>
