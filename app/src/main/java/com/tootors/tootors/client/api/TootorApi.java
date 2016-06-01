@@ -192,13 +192,8 @@ public class TootorApi {
         // form params
         Map<String, String> formParams = new HashMap<String, String>();
 
-//        queryParams.addAll(ApiInvoker.parameterToPairs("", "username", username));
-//        queryParams.addAll(ApiInvoker.parameterToPairs("", "password", password));
-
-        // TODO FIX
-        queryParams.addAll(ApiInvoker.parameterToPairs("", "id", 1));
-        queryParams.addAll(ApiInvoker.parameterToPairs("", "password", "password1"));
-
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "username", username));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "password", password));
 
         String[] contentTypes = {
 
