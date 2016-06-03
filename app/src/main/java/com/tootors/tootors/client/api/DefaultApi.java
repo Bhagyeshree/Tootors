@@ -133,10 +133,15 @@ public class DefaultApi {
         // form params
         Map<String, String> formParams = new HashMap<String, String>();
 
-        queryParams.addAll(ApiInvoker.parameterToPairs("", "name", name));
-        queryParams.addAll(ApiInvoker.parameterToPairs("", "location", location));
-        queryParams.addAll(ApiInvoker.parameterToPairs("", "focus", focus));
-        queryParams.addAll(ApiInvoker.parameterToPairs("", "is_tootor", isTootor));
+        if (name != null)
+            queryParams.addAll(ApiInvoker.parameterToPairs("", "name", name));
+        else if (location != null)
+            queryParams.addAll(ApiInvoker.parameterToPairs("", "location", location));
+        else if (focus != null)
+            queryParams.addAll(ApiInvoker.parameterToPairs("", "focus", focus));
+        else if (isTootor != null)
+            queryParams.addAll(ApiInvoker.parameterToPairs("", "is_tootor", isTootor));
+
         queryParams.addAll(ApiInvoker.parameterToPairs("", "api-key", apiKey));
 
 
