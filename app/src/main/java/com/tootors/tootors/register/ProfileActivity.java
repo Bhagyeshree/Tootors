@@ -98,9 +98,8 @@ public class ProfileActivity extends AppCompatActivity {
             pv.email.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                            "mailto", email, null));
-                    intent.setType("text/plain");
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("message/rfc822");
                     intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
                     intent.putExtra(Intent.EXTRA_SUBJECT, "Tootor Mail!");
                     intent.putExtra(Intent.EXTRA_TEXT, "Hi, I'd like to talk to you about Tootoring.");
