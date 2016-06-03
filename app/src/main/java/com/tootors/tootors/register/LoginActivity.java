@@ -12,6 +12,7 @@ import com.tootors.tootors.R;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText username;
+    private EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,25 +24,18 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onButtonClick(View v){
 
-
         if(v.getId() == R.id.login_button)
         {
             username = (EditText)findViewById(R.id.username_input);
+            password = (EditText)findViewById(R.id.password_input);
 
-            String str = username.getText().toString();
+            String u = username.getText().toString();
+            String p = password.getText().toString();
 
-
-            Intent i = new Intent(this, Display.class);
-
-            i.putExtra("Username", str);
-
-            startActivity(i);
-        }
-
-        if(v.getId() == R.id.signup_button)
+            new LoginTask(this).execute(u, p);
+        } else if(v.getId() == R.id.signup_button)
         {
             Intent i = new Intent(this, UserTypeActivity.class);
-
             startActivity(i);
         }
 
