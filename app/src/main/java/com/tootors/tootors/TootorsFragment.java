@@ -113,7 +113,6 @@ public class TootorsFragment extends Fragment {
                 city = tootor.getString(T_City);
                 focus = tootor.getString(T_FOCUS);
 
-
                 resultStrs[i] = "Name: " + name + " - Phone: " + phone + " - Email: " +
                         email + " - City: " + city + " - Focus: " + focus;
             }
