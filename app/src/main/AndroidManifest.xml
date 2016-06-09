@@ -27,10 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register.SignUpTutorActivity" />
+        <activity android:name=".register.SignUpActivity" />
         <activity android:name=".register.LoginActivity" />
         <activity android:name=".register.UserTypeActivity" />
-        <activity android:name=".register.SignUpStudentActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
             new LoginTask(this).execute(u, p);
         } else if(v.getId() == R.id.signup_button)
         {
-            Intent i = new Intent(this, UserTypeActivity.class);
+            Intent i = new Intent(this, SignUpActivity.class);
             startActivity(i);
         }
 

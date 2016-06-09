@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.tootors.tootors.map.MapActivity;
 import com.tootors.tootors.register.LoginActivity;
-import com.tootors.tootors.register.SignUpTutorActivity;
+import com.tootors.tootors.register.SignUpActivity;
 
 public class MainTootorsActivity extends AppCompatActivity {
 
@@ -41,7 +41,7 @@ public class MainTootorsActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_signup) {
-            startActivity(new Intent(this, SignUpTutorActivity.class));
+            startActivity(new Intent(this, SignUpActivity.class));
             return true;
         }
 
