@@ -12,7 +12,7 @@
     <string name="fullname">Full Name</string>
     <string name="password">Password</string>
     <string name="password2">Confirm Password</string>
-    <string name="email">Emial</string>
+    <string name="email">Email</string>
     <string name="email2">Confirm Email</string>
     <string name="phone">Phone</string>
     <string name="streetaddress">Street Address</string>
@@ -36,4 +36,6 @@
     <string name="text">Text</string>
     <string name="is_tootor">I am a Tootor!</string>
     <string name="hourly_rate">$%.2f / hr</string>
+    <string name="want_to_tootor">I want to be a Tootor! </string>
+    <string name="video_link">Video Link</string>
 </resources>

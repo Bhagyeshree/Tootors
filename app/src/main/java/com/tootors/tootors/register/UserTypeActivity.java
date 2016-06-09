@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.tootors.tootors.R;
-import com.tootors.tootors.register.SignUpStudentActivity;
-import com.tootors.tootors.register.SignUpTutorActivity;
 
 public class UserTypeActivity extends AppCompatActivity {
 
@@ -19,16 +17,16 @@ public class UserTypeActivity extends AppCompatActivity {
 
     public void onButtonClick(View v){
 
-        if(v.getId() == R.id.student_button)
-        {
-
-            Intent i = new Intent(this, SignUpStudentActivity.class);
-            startActivity(i);
-        }
+//        if(v.getId() == R.id.student_button)
+//        {
+//
+//            Intent i = new Intent(this, SignUpStudentActivity.class);
+//            startActivity(i);
+//        }
 
         if(v.getId() == R.id.tutor_button)
         {
-            Intent i = new Intent(this, SignUpTutorActivity.class);
+            Intent i = new Intent(this, SignUpActivity.class);
             startActivity(i);
         }
 

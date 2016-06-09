@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class DefaultApi {
-    String basePath = "http://162.243.155.134/api/tootor/";
+    String basePath = "http://162.243.155.134/api";
     ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
     public void addHeader(String key, String value) {
@@ -49,7 +49,7 @@ public class DefaultApi {
      * @param apiKey API Key
      * @return Tootor
      */
-    public Tootor createTootorById(String apiKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    public Tootor createTootor(String apiKey, Tootor tootor) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
         Object postBody = null;
 
         // verify the required parameter 'apiKey' is set
@@ -71,10 +71,25 @@ public class DefaultApi {
 
         queryParams.addAll(ApiInvoker.parameterToPairs("", "api-key", apiKey));
 
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "is_tootor", tootor.getIsTootor() ? "true" : "false"));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "username", tootor.getUsername()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "seo_name", tootor.getSeoName()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "email", tootor.getEmail()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "password", tootor.getPassword()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "name", tootor.getName()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "phone", tootor.getPhone()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "price", String.format(Locale.US, "%.2f", tootor.getPrice())));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "street", tootor.getStreet()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "city", tootor.getCity()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "state", tootor.getState()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "zip", tootor.getZip()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "focus", tootor.getFocus()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "description", tootor.getDescription()));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "picture", "No Picture"));
+        queryParams.addAll(ApiInvoker.parameterToPairs("", "video", tootor.getVideo().isEmpty() ? "No Video" : tootor.getVideo()));
 
-        String[] contentTypes = {
+        String[] contentTypes = {};
 
-        };
         String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
         if (contentType.startsWith("multipart/form-data")) {
@@ -87,8 +102,6 @@ public class DefaultApi {
         } else {
             // normal form params
         }
-
-        String[] authNames = new String[]{};
 
         try {
             String localVarResponse = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
@@ -139,7 +152,8 @@ public class DefaultApi {
             queryParams.addAll(ApiInvoker.parameterToPairs("", "location", location));
         else if (focus != null)
             queryParams.addAll(ApiInvoker.parameterToPairs("", "focus", focus));
-        else if (isTootor != null)
+
+        if (isTootor != null)
             queryParams.addAll(ApiInvoker.parameterToPairs("", "is_tootor", isTootor));
 
         queryParams.addAll(ApiInvoker.parameterToPairs("", "api-key", apiKey));

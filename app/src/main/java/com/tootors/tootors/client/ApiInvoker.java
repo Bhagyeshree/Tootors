@@ -1,5 +1,6 @@
 package com.tootors.tootors.client;
 
+import android.net.Uri;
 import android.util.Log;
 
 import com.google.gson.JsonParseException;
@@ -122,9 +123,9 @@ public class ApiInvoker {
         }
         b.append(String.valueOf(o));
       }
-      return b.toString();
+      return Uri.encode(b.toString());
     } else {
-      return String.valueOf(param);
+      return Uri.encode(String.valueOf(param));
     }
   }
 

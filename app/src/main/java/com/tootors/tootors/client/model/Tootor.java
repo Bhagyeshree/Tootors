@@ -84,6 +84,10 @@ public class Tootor  {
    **/
   @ApiModelProperty(value = "")
   public String getSeoName() {
+    if (seoName == null) {
+      return username.toLowerCase().replaceAll("\\W\\D", "");
+    }
+
     return seoName;
   }
   public void setSeoName(String seoName) {
