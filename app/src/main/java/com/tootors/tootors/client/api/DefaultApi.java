@@ -139,7 +139,8 @@ public class DefaultApi {
             queryParams.addAll(ApiInvoker.parameterToPairs("", "location", location));
         else if (focus != null)
             queryParams.addAll(ApiInvoker.parameterToPairs("", "focus", focus));
-        else if (isTootor != null)
+
+        if (isTootor != null)
             queryParams.addAll(ApiInvoker.parameterToPairs("", "is_tootor", isTootor));
 
         queryParams.addAll(ApiInvoker.parameterToPairs("", "api-key", apiKey));
