@@ -73,7 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
         public Tootor generateTootor() {
             Tootor t = new Tootor();
 
-            t.setIsTootor(isTootor.isActivated());
+            t.setIsTootor(isTootor.isEnabled());
             t.setUsername(username.getText().toString());
             t.setEmail(email.getText().toString());
             t.setPassword(pass1.getText().toString());

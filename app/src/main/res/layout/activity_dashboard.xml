@@ -17,6 +17,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,12 +27,14 @@
             android:textStyle="bold" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/profile_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/at_username" />
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -77,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:onClick="onButtonClick"
                 android:text="My Account" />
 
             <Button
@@ -87,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:onClick="onButtonClick"
                 android:text="Search Tootors" />
 
             <Button
@@ -98,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:linksClickable="true"
+                android:onClick="onButtonClick"
                 android:text="Search Tootors on Map" />
 
         </LinearLayout>

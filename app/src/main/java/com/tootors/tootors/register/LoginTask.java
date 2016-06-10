@@ -6,13 +6,10 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.tootors.tootors.MainTootorsActivity;
-import com.tootors.tootors.TootorActivity;
+import com.tootors.tootors.DashboardActivity;
 import com.tootors.tootors.client.ApiException;
-import com.tootors.tootors.client.api.MockTootorApi;
 import com.tootors.tootors.client.api.TootorApi;
 import com.tootors.tootors.client.model.Tootor;
-
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.ExecutionException;
@@ -56,7 +53,9 @@ public class LoginTask extends AsyncTask<String, Void, Tootor> {
         if (act == null) return;
 
         if (tootor != null) {
-            Intent profile = new Intent(act, MainTootorsActivity.class);
+            Intent profile = new Intent(act, DashboardActivity.class);
+            String json = new Gson().toJson(tootor);
+            profile.putExtra(ProfileActivity.EXTRA, json);
             act.startActivity(profile);
         } else {
             Toast.makeText(act, "Incorrect Username/Password", Toast.LENGTH_LONG).show();
