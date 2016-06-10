@@ -45,9 +45,9 @@ public class TootorsFragment extends Fragment {
 
     private void updateTootors() {
 
-        FetchTootorTask tootorTask = new FetchTootorTask();
-
-        tootorTask.execute();
+//        FetchTootorTask tootorTask = new FetchTootorTask();
+//
+//        tootorTask.execute();
     }
 
     @Override
