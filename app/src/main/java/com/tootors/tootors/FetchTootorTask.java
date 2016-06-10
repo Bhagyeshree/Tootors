@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 
-public class FetchTootorTask extends AsyncTask<String, Void, List<Tootor>> {
+public class FetchTootorTask extends AsyncTask<Void, Void, List<Tootor>> {
 
     private final String LOG_TAG = FetchTootorTask.class.getSimpleName();
 
@@ -23,17 +23,16 @@ public class FetchTootorTask extends AsyncTask<String, Void, List<Tootor>> {
         this.fragment = new WeakReference<>(fragment);
     }
 
+
+
     @Override
-    protected List<Tootor> doInBackground(String... params) {
+    protected List<Tootor> doInBackground(Void... params) {
 
         DefaultApi api = new DefaultApi();
-        String zip = null;
-
-        if (params.length > 0) zip = params[0];
 
         try {
 
-            InlineResponse200 response = api.getTootors("", null, zip, null, "true");
+            InlineResponse200 response = api.getTootors("", null, null, null, "true");
 
             List<Tootor> tootors = response.getResults();
 

@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class TootorsFragment extends Fragment {
 
-    private List<Tootor> tootors;
+    public static  List<Tootor> tootors;
 
     private ArrayAdapter<String> mTootorsAdapter;
 
@@ -81,6 +81,8 @@ public class TootorsFragment extends Fragment {
             String city;
             String focus;
 
+
+
             name = tootors.get(i).getName();
             city = tootors.get(i).getCity();
             focus = tootors.get(i).getFocus();
@@ -104,7 +106,7 @@ public class TootorsFragment extends Fragment {
 
     public void updateListView() {
         mTootorsAdapter.clear();
-        mTootorsAdapter.addAll(updateListView(20));
+        mTootorsAdapter.addAll(updateListView(9));
     }
 
     public AdapterView.OnItemClickListener listItemClick = new AdapterView.OnItemClickListener() {
