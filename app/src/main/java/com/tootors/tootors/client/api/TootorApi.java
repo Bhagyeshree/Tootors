@@ -1,16 +1,11 @@
 package com.tootors.tootors.client.api;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.tootors.tootors.client.ApiInvoker;
-import com.tootors.tootors.client.ApiException;
-import com.tootors.tootors.client.Pair;
-
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
-
+import com.tootors.tootors.client.ApiException;
+import com.tootors.tootors.client.ApiInvoker;
+import com.tootors.tootors.client.Pair;
+import com.tootors.tootors.client.model.Parser;
 import com.tootors.tootors.client.model.Tootor;
-import com.tootors.tootors.client.model.Error;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -91,7 +86,7 @@ public class TootorApi {
         try {
             String localVarResponse = apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType);
             if (localVarResponse != null) {
-                return new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().fromJson(localVarResponse, Tootor.class);
+                return Parser.tootor(localVarResponse);
             } else {
                 return null;
             }
@@ -149,7 +144,7 @@ public class TootorApi {
         try {
             String localVarResponse = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
             if (localVarResponse != null) {
-                return new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().fromJson(localVarResponse, Tootor.class);
+                return Parser.tootor(localVarResponse);
             } else {
                 return null;
             }
@@ -216,7 +211,7 @@ public class TootorApi {
         try {
             String localVarResponse = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
             if (localVarResponse != null) {
-                return new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().fromJson(localVarResponse, Tootor.class);
+                return Parser.tootor(localVarResponse);
             } else {
                 return null;
             }
@@ -267,7 +262,7 @@ public class TootorApi {
         try {
             String localVarResponse = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
             if (localVarResponse != null) {
-                return new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().fromJson(localVarResponse, Tootor.class);
+                return Parser.tootor(localVarResponse);
             } else {
                 return null;
             }
@@ -326,7 +321,7 @@ public class TootorApi {
         try {
             String localVarResponse = apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType);
             if (localVarResponse != null) {
-                return new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().fromJson(localVarResponse, Tootor.class);
+                return Parser.tootor(localVarResponse);
             } else {
                 return null;
             }
