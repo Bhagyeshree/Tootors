@@ -54,6 +54,12 @@ public class MainTootorsActivity extends AppCompatActivity {
             startActivity(new Intent(this, MapActivity.class));
             return true;
         }
+
+        if (id == R.id.action_tootor) {
+
+            startActivity(new Intent(this, TootorActivity.class));
+            return true;
+        }
         //It will return item
 
         return super.onOptionsItemSelected(item);

@@ -1,15 +1,13 @@
 package com.tootors.tootors;
 
-import android.app.Activity;
 import android.os.AsyncTask;
+import android.widget.ArrayAdapter;
 
 import com.tootors.tootors.client.ApiException;
 import com.tootors.tootors.client.api.DefaultApi;
 import com.tootors.tootors.client.model.InlineResponse200;
 import com.tootors.tootors.client.model.Tootor;
 
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
@@ -17,21 +15,42 @@ import java.util.concurrent.TimeoutException;
 /**
  * Created by JordanTon on 6/8/2016.
  */
-public class FetchTootorTask extends AsyncTask<String, Void, Tootor> {
+public class FetchTootorTask extends AsyncTask<String, Void, String[]> {
 
     private final String LOG_TAG = FetchTootorTask.class.getSimpleName();
 
-    WeakReference<Activity> activity;
+    private ArrayAdapter<String> mTootorsAdapter;
 
-    private List<Tootor> tootors = new ArrayList<Tootor>();
+    private List<Tootor> tootors;
 
-    public FetchTootorTask(Activity activity) {
+    public FetchTootorTask() {
 
-        this.activity = new WeakReference<>(activity);
+    }
+
+    private String[] getTootorFromList(List<Tootor> tootors, int numTootor) {
+
+        String[] resultStrs = new String[numTootor];
+
+        for (int i = 0; i < tootors.size(); i++) {
+
+            String name;
+            String city;
+            String focus;
+
+            name = tootors.get(i).getName();
+            city = tootors.get(i).getCity();
+            focus = tootors.get(i).getFocus();
+
+            resultStrs[i] = "Name: " + name + " - City: " + city + " - Focus: " + focus;
+        }
+
+        return resultStrs;
     }
 
     @Override
-    protected Tootor doInBackground(String... params) {
+    protected String[] doInBackground(String... params) {
+
+        int numTootor = 10;
 
         DefaultApi api = new DefaultApi();
 
@@ -41,20 +60,7 @@ public class FetchTootorTask extends AsyncTask<String, Void, Tootor> {
 
             tootors = response.getResults();
 
-            String[] resultStrs = new String[10];
-
-            for (int i = 0; i < tootors.size(); i++) {
-
-                String name;
-                String city;
-                String focus;
-
-                name = tootors.get(i).getName();
-                city = tootors.get(i).getCity();
-                focus = tootors.get(i).getFocus();
-
-                resultStrs[i] = "Name: " + name + " - City: " + city + " - Focus: " + focus;
-            }
+            return getTootorFromList(tootors, numTootor);
 
         } catch (TimeoutException e) {
             e.printStackTrace();
@@ -70,18 +76,15 @@ public class FetchTootorTask extends AsyncTask<String, Void, Tootor> {
     }
 
     @Override
-    protected void onPostExecute(Tootor tootor) {
+    protected void onPostExecute(String[] result) {
 
-        Activity act = activity.get();
+        super.onPostExecute(result);
 
-        if (act == null) {
+        if (result != null) {
 
-            return;
-        }
+            mTootorsAdapter.clear();
 
-        if (tootor != null) {
-
-
+            mTootorsAdapter.addAll(result);
         }
     }
 }

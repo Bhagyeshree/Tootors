@@ -41,6 +41,8 @@
 
         <activity android:name=".map.MapActivity" />
         <activity android:name=".register.ProfileActivity" />
+        <activity android:name=".TootorActivity" />
+
     </application>
 
 </manifest>
