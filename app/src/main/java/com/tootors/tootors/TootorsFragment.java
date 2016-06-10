@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -38,11 +40,30 @@ public class TootorsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+         ArrayList<String> list =  new ArrayList<String>();
+
         mTootorsAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_tootors,
-                R.id.list_item_tooters_textview, new ArrayList<String>());
+                R.id.list_item_tooters_textview, list)
+            {
+                @Override
+                public View getView(int position, View convertView, ViewGroup parent)
+                {
+                    View row;
+
+                    if (null == convertView) {
+                        row = inflater.inflate(R.layout.list_item_tootors, null);
+                    } else {
+                        row = convertView;
+                    }
+                    TextView tv = (TextView) row.findViewById(R.id.list_item_tooters_textview);
+                    tv.setText(Html.fromHtml(getItem(position)));
+                    return row;
+                }
+
+            };
 
         View rootView = inflater.inflate(R.layout.fragment_main_tootors, container, false);
 
@@ -87,7 +108,10 @@ public class TootorsFragment extends Fragment {
             city = tootors.get(i).getCity();
             focus = tootors.get(i).getFocus();
 
-            resultStrs[i] = "Name: " + name + " - City: " + city + " - Focus: " + focus;
+            resultStrs[i] =
+                    "<font color=\"black\"><b>Name: </b></font><b><font color=\"#0097d8\">" + name + "</font></b><br><small>" +
+                    "<font color=\"black\"><b>City:</b></font> " + city +"<br>"+
+                    "<font color=\"black\"><b>Focus:</b></font> " + focus+"<small>";
         }
 
         return resultStrs;

@@ -5,6 +5,9 @@
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:gravity="center_vertical"
-    android:id="@+id/list_item_tooters_textview">
+    android:id="@+id/list_item_tooters_textview"
+    android:textSize="17dp"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp"
+     />
 
-</TextView>
