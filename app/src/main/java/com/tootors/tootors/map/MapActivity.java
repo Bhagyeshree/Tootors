@@ -61,7 +61,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private GoogleMap map;
     private boolean permissionAllowed;
     private static final String TAG = MapActivity.class.getSimpleName();
-    public static LatLng latlng;
 
 
     @Override
@@ -144,7 +143,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 }
 
         }
-        
+
 
         map.setOnInfoWindowClickListener(this);
 
@@ -285,9 +284,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             try {
 
-                Log.v(TAG, "JSON DATA: " + "\n" + list_JsonStr);
                 return setLatLng(list_JsonStr);
-
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -345,7 +342,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         @Override
         protected void onPostExecute(LatLng result) {
             super.onPostExecute(result);
-            MapActivity.latlng = result;
         }
 
     }
