@@ -86,14 +86,14 @@ public class TootorsFragment extends Fragment {
         tootorTask.execute();
     }
 
-    private String[] updateListView(int numTootor) {
+    private List<String> updateListView(int numTootor) {
 
-        String[] resultStrs = new String[numTootor];
+        ArrayList<String> resultStrs = new ArrayList<>();
 
         int min = Math.min(numTootor, tootors.size());
 
         if (min == 0) {
-            return new String[]{"No results found"};
+            resultStrs.add("No results found");
         }
 
         for (int i = 0; i < min; i++) {
@@ -102,16 +102,14 @@ public class TootorsFragment extends Fragment {
             String city;
             String focus;
 
-
-
             name = tootors.get(i).getName();
             city = tootors.get(i).getCity();
             focus = tootors.get(i).getFocus();
 
-            resultStrs[i] =
+            resultStrs.add(
                     "<font color=\"black\"><b>Name: </b></font><b><font color=\"#0097d8\">" + name + "</font></b><br><small>" +
                     "<font color=\"black\"><b>City:</b></font> " + city +"<br>"+
-                    "<font color=\"black\"><b>Focus:</b></font> " + focus+"<small>";
+                    "<font color=\"black\"><b>Focus:</b></font> " + focus+"<small>");
         }
 
         return resultStrs;
@@ -130,7 +128,7 @@ public class TootorsFragment extends Fragment {
 
     public void updateListView() {
         mTootorsAdapter.clear();
-        mTootorsAdapter.addAll(updateListView(9));
+        mTootorsAdapter.addAll(updateListView(10));
     }
 
     public AdapterView.OnItemClickListener listItemClick = new AdapterView.OnItemClickListener() {

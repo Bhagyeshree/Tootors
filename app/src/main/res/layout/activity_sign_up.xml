@@ -81,7 +81,7 @@
                     android:ems="10"
                     android:id="@+id/price_input_signup"
                     android:hint="Price ($/hr)"
-                    android:text="13" />
+                    />
             </LinearLayout>
 
             <TextView
