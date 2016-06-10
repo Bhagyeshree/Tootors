@@ -59,7 +59,6 @@ public class TootorsFragment extends Fragment {
     private void updateTootors() {
         // todo: get location from device
 //        String location = "90001";
-        
         FetchTootorTask tootorTask = new FetchTootorTask(this);
 
 //        tootorTask.execute(location);
@@ -71,6 +70,11 @@ public class TootorsFragment extends Fragment {
         String[] resultStrs = new String[numTootor];
 
         int min = Math.min(numTootor, tootors.size());
+
+        if (min == 0) {
+            return new String[]{"No results found"};
+        }
+
         for (int i = 0; i < min; i++) {
 
             String name;
@@ -106,6 +110,8 @@ public class TootorsFragment extends Fragment {
     public AdapterView.OnItemClickListener listItemClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            if (tootors.size() == 0) return;
+
             Intent profile = new Intent(getContext(), ProfileActivity.class);
             String json = new Gson().toJson(tootors.get(position));
             profile.putExtra(ProfileActivity.EXTRA, json);
