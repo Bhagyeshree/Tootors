@@ -23,4 +23,10 @@
         android:id="@+id/action_open_map"
         android:title="@string/action_open_map"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_tootor"
+        android:title="@string/action_tooter"
+        app:showAsAction="never" />
+
 </menu>
