@@ -15,6 +15,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -28,9 +30,12 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.tootors.tootors.R;
+import com.tootors.tootors.TootorActivity;
 import com.tootors.tootors.TootorsFragment;
 import com.tootors.tootors.client.model.Tootor;
+import com.tootors.tootors.register.LoginActivity;
 import com.tootors.tootors.register.ProfileActivity;
+import com.tootors.tootors.register.SignUpActivity;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -344,5 +349,49 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             super.onPostExecute(result);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main_tootors, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (id == R.id.action_signup) {
+            startActivity(new Intent(this, SignUpActivity.class));
+            return true;
+        }
+
+        if (id == R.id.action_login) {
+            startActivity(new Intent(this, LoginActivity.class));
+            return true;
+        }
+
+        if (id == R.id.action_open_map) {
+            startActivity(new Intent(this, MapActivity.class));
+            return true;
+        }
+
+        if (id == R.id.action_tootor) {
+
+            startActivity(new Intent(this, TootorActivity.class));
+            return true;
+        }
+        //It will return item
+
+        return super.onOptionsItemSelected(item);
     }
 }
