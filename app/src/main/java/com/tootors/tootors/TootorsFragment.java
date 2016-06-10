@@ -59,7 +59,7 @@ public class TootorsFragment extends Fragment {
     private void updateTootors() {
         // todo: get location from device
 //        String location = "90001";
-
+        
         FetchTootorTask tootorTask = new FetchTootorTask(this);
 
 //        tootorTask.execute(location);
