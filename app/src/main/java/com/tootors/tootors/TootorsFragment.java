@@ -128,7 +128,7 @@ public class TootorsFragment extends Fragment {
 
     public void updateListView() {
         mTootorsAdapter.clear();
-        mTootorsAdapter.addAll(updateListView(10));
+        mTootorsAdapter.addAll(updateListView(100));
     }
 
     public AdapterView.OnItemClickListener listItemClick = new AdapterView.OnItemClickListener() {

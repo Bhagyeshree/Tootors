@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.tootors.tootors.MainTootorsActivity;
 import com.tootors.tootors.R;
 import com.tootors.tootors.TootorActivity;
 import com.tootors.tootors.map.MapActivity;
@@ -23,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
 
@@ -40,10 +43,6 @@ public class LoginActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         if (id == R.id.action_signup) {
             startActivity(new Intent(this, SignUpActivity.class));
@@ -62,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (id == R.id.action_tootor) {
 
-            startActivity(new Intent(this, TootorActivity.class));
+            startActivity(new Intent(this, MainTootorsActivity.class));
             return true;
         }
         //It will return item

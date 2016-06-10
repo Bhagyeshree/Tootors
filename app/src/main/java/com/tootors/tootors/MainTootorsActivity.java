@@ -17,8 +17,7 @@ public class MainTootorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_tootors);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+
     }
 
     @Override
@@ -35,10 +34,6 @@ public class MainTootorsActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         if (id == R.id.action_signup) {
             startActivity(new Intent(this, SignUpActivity.class));
@@ -57,7 +52,7 @@ public class MainTootorsActivity extends AppCompatActivity {
 
         if (id == R.id.action_tootor) {
 
-            startActivity(new Intent(this, TootorActivity.class));
+            startActivity(new Intent(this, MainTootorsActivity.class));
             return true;
         }
         //It will return item

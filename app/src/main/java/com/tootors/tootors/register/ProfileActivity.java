@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.tootors.tootors.ImageTool;
+import com.tootors.tootors.MainTootorsActivity;
 import com.tootors.tootors.R;
 import com.tootors.tootors.TootorActivity;
 import com.tootors.tootors.client.model.Tootor;
@@ -145,10 +146,6 @@ public class ProfileActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         if (id == R.id.action_signup) {
             startActivity(new Intent(this, SignUpActivity.class));
@@ -167,7 +164,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         if (id == R.id.action_tootor) {
 
-            startActivity(new Intent(this, TootorActivity.class));
+            startActivity(new Intent(this, MainTootorsActivity.class));
             return true;
         }
         //It will return item
